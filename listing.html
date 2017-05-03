@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Listing</title>
+    	<link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" > 
+    	<script type="text/javascript" src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="listing.html"><span class="glyphicon glyphicon-list" aria-hidden="false"></span>
+          Ссылки</a></li>
+        <li><a href="statistics.html"><span class="glyphicon glyphicon-stats" aria-hidden="false"></span>
+          Статистика</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+    	<h4>Добавить ссылку</h4>
+    	<div class="input-group">
+  			<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-link" aria-hidden="false"></span></span>
+  			<input type="text" class="form-control" placeholder="Https:\\" aria-describedby="basic-addon1">
+  			<span class="input-group-btn">
+        		<button class="btn btn-primary" type="button" >Добавить <span class="glyphicon glyphicon-arrow-right" aria-hidden="false"></span></button>
+      		</span>
+		</div>
+		<br>
+    	<h4>Cсылки</h4>
+    	<table class="table table-bordered">
+          <thead> 
+            <tr>
+              <th width=40><span class="glyphicon glyphicon-globe" aria-hidden="false"></th></span>
+              <th width=300><b> идентификатор </b></th>
+              <th><b> целевой URL ссылки</b></th>
+              <th width=40><span class="glyphicon glyphicon-stats" aria-hidden="false"></th></span>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#"><span class="glyphicon glyphicon-link" aria-hidden="false" ></span></a></td>
+              <td>...</td>
+              <td><a href="http://vk.com"> http://vk.com </a></td>
+              <td><a href="statistics.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="false"></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="glyphicon glyphicon-link" aria-hidden="false"></span></a></td>
+              <td>...</td>
+              <td><a href="http://Google.com"> http://Google.com </a></td>
+              <td><a href="statistics.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="false"></span></a></td>
+            </tr>
+            <tr>
+              <td><a href="#"><span class="glyphicon glyphicon-link" aria-hidden="false"></span></a></td>
+              <td>...</td>
+              <td><a href="http://Google.ru"> http://Google.ru </a></td>
+              <td><a href="statistics.html"><span class="glyphicon glyphicon-eye-open" aria-hidden="false"></span></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+	</body>
+</html>

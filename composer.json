@@ -1,0 +1,14 @@
+{
+    "name": "redhair/practika-02",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Redhair",
+            "email": "Redhair20@hotmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "twbs/bootstrap": "^3.3"
+    }
+}
