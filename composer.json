@@ -9,6 +9,7 @@
     ],
     "minimum-stability": "beta",
     "require": {
-        "twbs/bootstrap": "^3.3"
+        "twbs/bootstrap": "^3.3",
+        "components/jQuery": "^3.2"
     }
 }
