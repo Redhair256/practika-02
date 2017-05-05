@@ -1,0 +1,5 @@
+CREATE TABLE `mytestdb`.`links` ( `id` INT NOT NULL , `token` INT NOT NULL , `target_url` VARCHAR(255) NOT NULL , `created_ad` DATETIME NOT NULL , `link_id` INT NOT NULL , PRIMARY KEY (`1`)) ENGINE = InnoDB;
+
+CREATE TABLE `mytestdb`.`clicks` ( `id` INT NOT NULL , `user_id` INT NOT NULL , `link_id` INT NOT NULL , `3` DATETIME NOT NULL , PRIMARY KEY (`1`)) ENGINE = InnoDB;
+
+CREATE TABLE `mytestdb`.`users` ( `id` INT NOT NULL , `token` INT NOT NULL , `ip` VARCHAR(15) NOT NULL , `browser` VARCHAR(64) NOT NULL , `os` VARCHAR(32) NOT NULL , `create_at` DATETIME NOT NULL , `link_id` INT NOT NULL , PRIMARY KEY (`1`)) ENGINE = InnoDB;
