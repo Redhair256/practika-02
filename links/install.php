@@ -19,15 +19,34 @@ try {
 $dbh->beginTransaction();
 
 /* Изменение схемы базы данных и данных */
-$count = $dbh->exec("CREATE TABLE `mytestdb`.`links` ( `id` INT NOT NULL , `token` INT NOT NULL , `target_url` VARCHAR(255) NOT NULL , `created_ad` DATETIME NOT NULL , `link_id` INT NOT NULL , PRIMARY KEY (`1`)) ENGINE = InnoDB;") or die(print_r($db->errorInfo(), true));
-$count =$count + $dbh->exec("CREATE TABLE `mytestdb`.`clicks` ( `id` INT NOT NULL , `user_id` INT NOT NULL , `link_id` INT NOT NULL , `3` DATETIME NOT NULL , PRIMARY KEY (`1`)) ENGINE = InnoDB;") or die(print_r($db->errorInfo(), true));
-$count =$count + $dbh->exec("CREATE TABLE `mytestdb`.`users` ( `id` INT NOT NULL , `token` INT NOT NULL , `ip` VARCHAR(15) NOT NULL , `browser` VARCHAR(64) NOT NULL , `os` VARCHAR(32) NOT NULL , `create_at` DATETIME NOT NULL , `link_id` INT NOT NULL , PRIMARY KEY (`1`)) ENGINE = InnoDB;") or die(print_r($db->errorInfo(), true));
+$count = 0;
+$ret = $dbh->exec("CREATE TABLE `mytestdb`.`links` ( `id` INT NOT NULL , `token` INT NOT NULL , `target_url` VARCHAR(255) NOT NULL , `created_ad` DATETIME NOT NULL , `link_id` INT NOT NULL , PRIMARY KEY (`id`));");
+if($ret === false){
+	die(print_r($dbh->errorInfo(), true));
+} else {
+	$count=$count+1;
+};
+$ret = $dbh->exec("CREATE TABLE `mytestdb`.`clicks` ( `id` INT NOT NULL , `user_id` INT NOT NULL , `link_id` INT NOT NULL , `3` DATETIME NOT NULL , PRIMARY KEY (`id`));");
+if($ret === false){
+	die(print_r($dbh->errorInfo(), true));
+} else {
+	$count=$count+1;
+};
+$ret = $dbh->exec("CREATE TABLE `mytestdb`.`users` ( `id` INT NOT NULL , `token` INT NOT NULL , `ip` VARCHAR(15) NOT NULL , `browser` VARCHAR(64) NOT NULL , `os` VARCHAR(32) NOT NULL , `create_at` DATETIME NOT NULL , `link_id` INT NOT NULL , PRIMARY KEY (`id`));");
+if($ret === false){
+	die(print_r($dbh->errorInfo(), true));
+} else {
+	$count=$count+1;
+};
 
-/* Распознаем ошибку и откатываем назад изменения */
+/* Распознаем ошибку и откатываем назад изменения 
+это кусок кода не отменяет создание таблиц*/
+print("обработанно $count запроса.\n <br> \n");
 if ($count < 3) {
   $dbh->rollBack();
+  echo "Error found!"; 
 } else {
-  $dbh->commit()
+  $dbh->commit();
   echo "Work Complite!"; 
 }
 
